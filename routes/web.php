@@ -1,9 +1,13 @@
 <?php
 
-use App\Http\Controllers\FullCalendarController;
+use App\Http\Controllers\{
+    EventController,
+    FullCalendarController
+};
 use Illuminate\Support\Facades\Route;
 
 Route::get('/calendar', [FullCalendarController::class, 'index'])->name('calendar.index');
+Route::get('/load-events', [EventController::class, 'loadEvents'])->name('routeLoadEvents');
 
 Route::get('/', function () {
     return view('welcome');
