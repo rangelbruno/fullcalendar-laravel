@@ -26,9 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
       locale: 'pt-br',
       navLinks: true,
       editable: true,
+      selectable: true,
       droppable: true, // this allows things to be dropped onto the calendar
       dayMaxEvents: true, // allow "more" link when too many events
-    events: 'https://fullcalendar.io/api/demo-feeds/events.json?overload-day',
+      events: 'https://fullcalendar.io/api/demo-feeds/events.json?overload-day',
    
       drop: function(arg) {
         // is the "remove after drop" checkbox checked?
@@ -36,7 +37,19 @@ document.addEventListener('DOMContentLoaded', function() {
           // if so, remove the element from the "Draggable Events" list
           arg.draggedEl.parentNode.removeChild(arg.draggedEl);
         }
-      }
+      },
+      eventDrop: function(event){
+          alert('event Drop');
+      },
+      eventClick: function(event){
+          alert('event Click');
+      },
+      eventResize: function(event){
+          alert('event Resize');
+      },
+      select: function(event){
+          alert('event Select');
+      },
     });
     calendar.render();
 
