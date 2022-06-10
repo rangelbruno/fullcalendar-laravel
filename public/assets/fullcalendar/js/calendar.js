@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
       navLinks: true,
       editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
-      eventLimit: true, // allow "more" link when too many events
+      dayMaxEvents: true, // allow "more" link when too many events
     events: 'https://fullcalendar.io/api/demo-feeds/events.json?overload-day',
    
       drop: function(arg) {
