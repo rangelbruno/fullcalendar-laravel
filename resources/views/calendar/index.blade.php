@@ -47,6 +47,12 @@
 
   </div>
 
+<!-- Chamando o Jquery -->
+<script src="{{ url('assets/fullcalendar/js/jquery-3.6.0.min.js') }}"></script>
+
+<!-- Chamando o Moment -->
+<script src="{{ url('assets/fullcalendar/js/moment.js') }}"></script>
+
 <!-- Chamando o Calendar -->
 <script src="{{ url('assets/fullcalendar/js/script.js') }}"></script>
 <script src="{{ url('assets/fullcalendar/js/calendar.js') }}"></script>
