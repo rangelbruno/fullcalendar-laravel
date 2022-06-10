@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       selectable: true,
       droppable: true, // this allows things to be dropped onto the calendar
       dayMaxEvents: true, // allow "more" link when too many events
-      events: 'https://fullcalendar.io/api/demo-feeds/events.json?overload-day',
+      //events: 'https://fullcalendar.io/api/demo-feeds/events.json?overload-day',
    
       drop: function(arg) {
         // is the "remove after drop" checkbox checked?
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
       select: function(event){
           alert('event Select');
       },
+      events: routeEvents('routeLoadEvents'),
     });
     calendar.render();
 

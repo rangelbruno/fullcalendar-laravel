@@ -7,14 +7,6 @@
 <!-- Chamando o CSS  -->
 <link href="{{ url('assets/fullcalendar/css/style.css') }}" rel="stylesheet" type="text/css" />
 
-<!-- Chamando o Calendar -->
-<script src="{{ url('assets/fullcalendar/js/calendar.js') }}"></script>
-
-<script src="{{ url('assets/fullcalendar/lib/main.js') }}"></script>
-<script src="{{ url('assets/fullcalendar/lib/locales-all.min.js') }}"></script>
-
-
-
 </head>
 <body>
   <div id='wrap'>
@@ -47,9 +39,19 @@
     </div>
 
     <div id='calendar-wrap'>
-      <div id='calendar'></div>
+      <div 
+            id='calendar'
+            data-route-load-events="{{ route('routeLoadEvents') }}"
+      ></div>
     </div>
 
   </div>
+
+<!-- Chamando o Calendar -->
+<script src="{{ url('assets/fullcalendar/js/script.js') }}"></script>
+<script src="{{ url('assets/fullcalendar/js/calendar.js') }}"></script>
+
+<script src="{{ url('assets/fullcalendar/lib/main.js') }}"></script>
+<script src="{{ url('assets/fullcalendar/lib/locales-all.min.js') }}"></script>
 </body>
 </html>

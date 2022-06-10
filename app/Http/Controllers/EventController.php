@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Event;
+use App\Models\Event;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class EventController extends Controller
 {
