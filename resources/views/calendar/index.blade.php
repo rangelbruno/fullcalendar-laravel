@@ -6,6 +6,8 @@
 <link href="{{ url('assets/fullcalendar/lib/main.css') }}" rel="stylesheet" type="text/css" />
 <!-- Chamando o CSS  -->
 <link href="{{ url('assets/fullcalendar/css/style.css') }}" rel="stylesheet" type="text/css" />
+<!-- Chamando o CSRF  -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
 <body>
