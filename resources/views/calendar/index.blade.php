@@ -4,6 +4,8 @@
 <meta charset='utf-8' />
 
 <link href="{{ url('assets/fullcalendar/lib/main.css') }}" rel="stylesheet" type="text/css" />
+<!-- Chamando o Bootstrap  -->
+<link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 <!-- Chamando o CSS  -->
 <link href="{{ url('assets/fullcalendar/css/style.css') }}" rel="stylesheet" type="text/css" />
 <!-- Chamando o CSRF  -->
@@ -11,6 +13,7 @@
 
 </head>
 <body>
+  @include('calendar.modal')
   <div id='wrap'>
 
     <div id='external-events'>
@@ -51,7 +54,11 @@
   </div>
 
 <!-- Chamando o Jquery -->
-<script src="{{ url('assets/fullcalendar/js/jquery-3.6.0.min.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<!-- Chamando o Bootstrap -->
+<script src="{{ url('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ url('assets/js/popper.min.js') }}"></script>
 
 <!-- Chamando o Moment -->
 <script src="{{ url('assets/fullcalendar/js/moment.js') }}"></script>

@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       selectable: true,
       droppable: true, // this allows things to be dropped onto the calendar
       dayMaxEvents: true, // allow "more" link when too many events
-      //events: 'https://fullcalendar.io/api/demo-feeds/events.json?overload-day',
+     // events: 'https://fullcalendar.io/api/demo-feeds/events.json?overload-day',
    
       drop: function(arg) {
         // is the "remove after drop" checkbox checked?
@@ -46,14 +46,13 @@ document.addEventListener('DOMContentLoaded', function() {
           _method:'PUT',
           title: element.event.title,
           id: element.event.id,
-          start: start,
-          end: end
+          start: start
         };
-        sendEvent(routeEvents('routeEventUpdate'),newEvent,calendar);
+        sendEvent(routeEvents('routeEventUpdate'),newEvent);
 
       },
       eventClick: function(event){
-          alert('event Click');
+          $("#modalCalendar").modal('show');
       },
       eventResize: function(e){
         let start = moment(e.event.start).format("YYYY-MM-DD HH:mm:ss");

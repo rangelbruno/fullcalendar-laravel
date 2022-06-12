@@ -17,7 +17,7 @@ function sendEvent(route, data_) {
         data: data_,
         method: 'POST',
         dataType: 'json',
-        success: function (json) {
+        success: function (json)  {
             if(json)
             {
                 location.reload();
