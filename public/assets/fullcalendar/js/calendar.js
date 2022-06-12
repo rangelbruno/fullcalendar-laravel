@@ -38,14 +38,34 @@ document.addEventListener('DOMContentLoaded', function() {
           arg.draggedEl.parentNode.removeChild(arg.draggedEl);
         }
       },
-      eventDrop: function(event){
-          alert('event Drop');
+      eventDrop: function(element){
+        let start = moment(element.event.start).format("YYYY-MM-DD HH:mm:ss");
+        let end = moment(element.event.end).format("YYYY-MM-DD HH:mm:ss");
+        
+        let newEvent = {
+          _method:'PUT',
+          title: element.event.title,
+          id: element.event.id,
+          start: start,
+          end: end
+        };
+        sendEvent(routeEvents('routeEventUpdate'),newEvent,calendar);
+
       },
       eventClick: function(event){
           alert('event Click');
       },
-      eventResize: function(event){
-          alert('event Resize');
+      eventResize: function(e){
+        let start = moment(e.event.start).format("YYYY-MM-DD HH:mm:ss");
+        let end = moment(e.event.end).format("YYYY-MM-DD HH:mm:ss");
+        
+        let newEvent = {
+          _method: 'PUT',
+          id: e.event.id,
+          start: start,
+          end: end
+        };
+        sendEvent(routeEvents('routeEventUpdate'), newEvent);
       },
       select: function(event){
           alert('event Select');

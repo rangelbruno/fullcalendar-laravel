@@ -19,4 +19,13 @@ class EventController extends Controller
         $events = $this->model->all();
         return response()->json($events);
     }
+
+    public function update(Request $request)
+    {
+        $event =  $this->model->where('id', $request->id)->first();
+        $event->fill($request->all());
+        $event->save();
+
+        return response()->json(true);
+    }
 }
