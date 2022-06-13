@@ -82,12 +82,20 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         sendEvent(routeEvents('routeEventUpdate'), newEvent);
       },
-      select: function(event){
+      select: function(element){
         resetForm("#formEvent");
         
         $("#modalCalendar").modal('show');
         $("#modalCalendar #titleModal").text('Adicionar Evento');
         $("#modalCalendar button.deleteEvent").css("display", "none");
+
+        let start = moment(element.start).format("DD/MM/YYYY HH:mm:ss");
+        $("#modalCalendar input[name='start']").val(start);
+
+        $("#modalCalendar input[name='color']").val("#3788D8");
+
+        calendar.unselect();
+
       },
       events: routeEvents('routeLoadEvents'),
     });

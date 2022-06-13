@@ -13,7 +13,7 @@
                 <div class="col">
                     <label for="title">Titulo</label>
                   <input type="text" class="form-control" id="title" name="title">
-                  <input type="text" name="id">
+                  <input type="hidden" name="id">
                 </div>
                 <div class="col">
                     <label for="start">Data/hora</label>
