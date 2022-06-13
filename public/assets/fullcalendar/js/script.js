@@ -1,8 +1,5 @@
-function routeEvents(route) {
-    return document.getElementById('calendar').dataset[route];
-}
-
 $(function() {
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -24,4 +21,12 @@ function sendEvent(route, data_) {
             }
         }
     });
+}
+
+function routeEvents(route) {
+    return document.getElementById('calendar').dataset[route];
+}
+
+function resetForm(form){
+   $(form).trigger('reset');
 }

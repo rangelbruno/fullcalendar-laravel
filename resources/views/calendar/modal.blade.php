@@ -7,16 +7,17 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div id="formEvent" class="modal-body">
           <form action="">
             <div class="row">
                 <div class="col">
                     <label for="title">Titulo</label>
                   <input type="text" class="form-control" id="title" name="title">
+                  <input type="text" name="id">
                 </div>
                 <div class="col">
                     <label for="start">Data/hora</label>
-                  <input type="text" class="form-control" id="start" name="start">
+                  <input type="text" class="form-control date-time" id="start" name="start">
                 </div>
             </div>
             <div class="row">

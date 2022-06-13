@@ -51,8 +51,24 @@ document.addEventListener('DOMContentLoaded', function() {
         sendEvent(routeEvents('routeEventUpdate'),newEvent);
 
       },
-      eventClick: function(event){
+      eventClick: function(element){
+        resetForm("#formEvent");
+
           $("#modalCalendar").modal('show');
+          $("#modalCalendar #titleModal").text('Alterar Evento');
+          $("#modalCalendar button.deleteEvent").css("display", "flex");
+
+          let id = element.event.id;
+          $("#modalCalendar input[name='id']").val(id);
+
+          let title = element.event.title;
+          $("#modalCalendar input[name='title']").val(title);
+          
+          let start = moment(element.event.start).format("DD/MM/YYYY HH:mm:ss");
+          $("#modalCalendar input[name='start']").val(start);
+
+          let color = element.event.backgroundColor;
+          $("#modalCalendar input[name='color']").val(color);
       },
       eventResize: function(e){
         let start = moment(e.event.start).format("YYYY-MM-DD HH:mm:ss");
@@ -67,7 +83,11 @@ document.addEventListener('DOMContentLoaded', function() {
         sendEvent(routeEvents('routeEventUpdate'), newEvent);
       },
       select: function(event){
-          alert('event Select');
+        resetForm("#formEvent");
+        
+        $("#modalCalendar").modal('show');
+        $("#modalCalendar #titleModal").text('Adicionar Evento');
+        $("#modalCalendar button.deleteEvent").css("display", "none");
       },
       events: routeEvents('routeLoadEvents'),
     });
